@@ -15,5 +15,5 @@
 ```
 CPU model:  Intel(R) Core(TM) i5-6200U CPU @ 2.30GHz
 1 CPU,  2 physical cores per CPU, total 4 logical CPU units
-cpuperf with 300 iterations: **961.217**
+cpuperf with 300 iterations: 961.217
 ```
