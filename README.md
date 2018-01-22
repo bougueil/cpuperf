@@ -9,11 +9,11 @@
 ## Usage
 ```
   cd cpuperf/
-  mix escript.build
   NUM_ITERS=300
-  ./cpuperf $NUM_ITERS
+  ./show_cpuperf $NUM_ITERS 
 ```
 ```
-$ ./cpuperf 300
-$ 919.072
+CPU model:  Intel(R) Core(TM) i5-6200U CPU @ 2.30GHz
+1 CPU,  2 physical cores per CPU, total 4 logical CPU units
+cpuperf with 300 iterations: **961.217**
 ```
