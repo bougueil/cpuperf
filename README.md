@@ -8,6 +8,7 @@
 
 ## Usage
 ```
+  git clone https://github.com/bougueil/cpuperf.git
   cd cpuperf/
   NUM_ITERS=300
   ./show_cpuperf $NUM_ITERS 
