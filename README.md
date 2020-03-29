@@ -2,8 +2,6 @@
 
 ## a measuring tool for the Erlang VM
 
-  a measuring tool for the Erlang VM
-
   Given an integer n (number of iterations) as input, returns the time in `ms` to run the algorithm with n.
   The calculated time increases non linearly with n, try with low number like 300.
 

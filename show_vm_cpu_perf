@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Usage
+# ./show_cpuperf NUM_ITERATIONS
+
+# mix escript.build
+
+cat /proc/cpuinfo | awk '
+BEGIN{FS=":"} {} \
+  /^physical id/ { if(nb_cpu<$2)  { nb_cpu=$2 } }     \
+  /^cpu cores/   { if(nb_cores<$2){ nb_cores=$2 } }   \
+  /^processor/   { if(nb_units<$2){ nb_units=$2 } }   \
+  /^model name/  { model=$2 }                         \
+  END{                                                \
+   nb_cpu=(nb_cpu+1);                                 \
+   nb_units=(nb_units+1);                             \
+                                                      \
+   print "CPU model:",model;                         \
+   print nb_cpu,"CPU,",nb_cores,"physical cores per CPU, total",nb_units,"logical CPU units" \
+}'
+
+# perf=$(./cpuperf $1)
+echo "computing time in ms to execute $1 iterations"
+echo $1 | elixir ./vm_cpu_perf.exs
