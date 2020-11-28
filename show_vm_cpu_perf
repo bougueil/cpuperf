@@ -19,6 +19,4 @@ BEGIN{FS=":"} {} \
    print nb_cpu,"CPU,",nb_cores,"physical cores per CPU, total",nb_units,"logical CPU units" \
 }'
 
-# perf=$(./cpuperf $1)
-echo "computing time in ms to execute $1 iterations"
 echo $1 | elixir ./vm_cpu_perf.exs
