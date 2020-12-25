@@ -8,8 +8,8 @@ defmodule VmCpuBench do
   """
 
   def run(n) do
-    numbers = for _ <- 1..n, do: :rand.uniform(1000)
-    numbers_sz = length(numbers)
+    :rand.seed(:exsss, 0)
+    numbers = for _ <- n..1, do: :rand.uniform(1000)
     self = self()
 
     recurse_fn = fn
@@ -26,7 +26,7 @@ defmodule VmCpuBench do
 
     bench_fn = fn ->
       for _ <- numbers, do: spawn(worker_fn)
-      recurse_fn.(recurse_fn, numbers_sz, [])
+      recurse_fn.(recurse_fn, n, [])
     end
 
     (fn ->
@@ -41,4 +41,6 @@ end
 iters = IO.gets('') |> String.trim_trailing() |> String.to_integer()
 
 VmCpuBench.run(iters)
-|> IO.inspect(label: "computing time (ms.) on OTP #{System.otp_release()} to execute #{iters} iterations ")
+|> IO.inspect(
+  label: "computing time (ms.) on OTP #{System.otp_release()} to execute #{iters} iterations "
+)
