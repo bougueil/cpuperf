@@ -42,5 +42,5 @@ iters = IO.gets('') |> String.trim_trailing() |> String.to_integer()
 
 VmCpuBench.run(iters)
 |> IO.inspect(
-  label: "computing time (ms.) on OTP #{System.otp_release()} to execute #{iters} iterations "
+  label: "computing time (ms.) on OTP #{System.otp_release()} erts-#{:erlang.system_info(:version)} to execute #{iters} iterations "
 )

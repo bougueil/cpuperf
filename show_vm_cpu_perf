@@ -4,7 +4,6 @@
 # ./show_cpuperf NUM_ITERATIONS
 
 # mix escript.build
-
 cat /proc/cpuinfo | awk '
 BEGIN{FS=":"} {} \
   /^physical id/ { if(nb_cpu<$2)  { nb_cpu=$2 } }     \
@@ -19,4 +18,8 @@ BEGIN{FS=":"} {} \
    print nb_cpu,"CPU,",nb_cores,"physical cores per CPU, total",nb_units,"logical CPU units" \
 }'
 
-echo $1 | elixir ./vm_cpu_perf.exs
+if [ -z "$2" ]; then
+    echo $1 | elixir ./vm_cpu_perf.exs
+else
+    echo "NUM_SCHEDULER_ONLINE:${2}";echo $1 | elixir --erl "+S${2}" ./vm_cpu_perf.exs
+fi

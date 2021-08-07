@@ -11,12 +11,22 @@ I use it to compare vm on different hardwares and dimension loads.
 ```
   git clone https://github.com/bougueil/cpuperf.git
   cd cpuperf/
-  NUM_ITERS=300
+  NUM_ITERS=600
   ./show_vm_cpu_perf $NUM_ITERS
+
+  Erlang/OTP 24 [erts-12.0.3]
+  CPU model:  Intel(R) Core(TM) i9-10885H CPU @ 2.40GHz
+  1 CPU,  8 physical cores per CPU, total 16 logical CPU units
+  computing time (ms.) on OTP 24 erts-12.0.3 to execute 600 iterations: 1027.558
 ```
+
+## fixing the number of schedulers online
 ```
-CPU model:  Intel(R) Core(TM) i5-6200U CPU @ 2.30GHz
-1 CPU,  2 physical cores per CPU, total 4 logical CPU units
-computing time in ms to execute 300 iterations
-961.217
+  ./show_vm_cpu_perf $NUM_ITERS 1   # 1 scheduler online
+
+Erlang/OTP 24 [erts-12.0.3]
+  CPU model:  Intel(R) Core(TM) i9-10885H CPU @ 2.40GHz
+  1 CPU,  8 physical cores per CPU, total 16 logical CPU units
+  NUM_SCHEDULER_ONLINE:1
+  computing time (ms.) on OTP 24 erts-12.0.3 to execute 600 iterations: 7732.066
 ```
