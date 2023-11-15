@@ -15,6 +15,7 @@ NUM_ITERS=600
 
 CPU model:  12th Gen Intel(R) Core(TM) i5-1235U
 1 CPU,  10 physical cores per CPU, total 12 logical CPU units
+System and architecture:
   Elixir version     1.17.0-dev
   Erlang/OTP version 26
   ERTS version       14.1.1
@@ -31,6 +32,7 @@ CPU model:  12th Gen Intel(R) Core(TM) i5-1235U
 CPU model:  12th Gen Intel(R) Core(TM) i5-1235U
 1 CPU,  10 physical cores per CPU, total 12 logical CPU units
 NUM_SCHEDULER_ONLINE:1
+System and architecture:
   Elixir version     1.17.0-dev
   Erlang/OTP version 26
   ERTS version       14.1.1
