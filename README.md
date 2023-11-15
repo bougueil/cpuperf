@@ -13,19 +13,30 @@
   NUM_ITERS=600
   ./show_vm_cpu_perf $NUM_ITERS
 
-  Erlang/OTP 24 [erts-12.0.3]
-  CPU model:  Intel(R) Core(TM) i9-10885H CPU @ 2.40GHz
-  1 CPU,  8 physical cores per CPU, total 16 logical CPU units
-  computing time (ms.) on OTP 24 erts-12.0.3 to execute 600 iterations: 1027.558
+CPU model:  12th Gen Intel(R) Core(TM) i5-1235U
+1 CPU,  10 physical cores per CPU, total 12 logical CPU units
+  Elixir version     1.17.0-dev
+  Erlang/OTP version 26
+  ERTS version       14.1.1
+  Compiled for       x86_64-pc-linux-gnu
+  Schedulers         12
+  Schedulers online  12
+  Computing time (ms.) to execute 600 iterations : 1291.426
 ```
 
-## fixing the number of schedulers online
+## setting the number of schedulers online
 ```
   ./show_vm_cpu_perf $NUM_ITERS 1   # 1 scheduler online
 
-Erlang/OTP 24 [erts-12.0.3]
-  CPU model:  Intel(R) Core(TM) i9-10885H CPU @ 2.40GHz
-  1 CPU,  8 physical cores per CPU, total 16 logical CPU units
-  NUM_SCHEDULER_ONLINE:1
-  computing time (ms.) on OTP 24 erts-12.0.3 to execute 600 iterations: 7732.066
+CPU model:  12th Gen Intel(R) Core(TM) i5-1235U
+1 CPU,  10 physical cores per CPU, total 12 logical CPU units
+NUM_SCHEDULER_ONLINE:1
+  Elixir version     1.17.0-dev
+  Erlang/OTP version 26
+  ERTS version       14.1.1
+  Compiled for       x86_64-pc-linux-gnu
+  Schedulers         1
+  Schedulers online  1
+  Computing time (ms.) to execute 600 iterations : 4767.23
+
 ```
