@@ -47,4 +47,4 @@ VmCpuBench.run(iters)
   Compiled for       #{:erlang.system_info(:system_architecture)}
   Schedulers         #{:erlang.system_info(:schedulers)}
   Schedulers online  #{:erlang.system_info(:schedulers_online)}
-  Computing time (ms.) to execute #{iters} iterations ")
+Computing time (ms.) to execute #{iters} iterations ")

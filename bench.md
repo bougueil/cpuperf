@@ -12,7 +12,7 @@ System and architecture:
   Compiled for       x86_64-pc-linux-gnu
   Schedulers         1
   Schedulers online  1
-  Computing time (ms.) to execute 600 iterations : 17484.478
+Computing time (ms.) to execute 600 iterations : 17484.478
 ```
 
 ### laptop i5
@@ -26,7 +26,7 @@ System and architecture:
   Compiled for       x86_64-pc-linux-gnu
   Schedulers         12
   Schedulers online  12
-  Computing time (ms.) to execute 600 iterations : 1291.426
+Computing time (ms.) to execute 600 iterations : 1291.426
 ```
 
 ### laptop i9
