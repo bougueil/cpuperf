@@ -1,10 +1,10 @@
 defmodule VmCpuBench do
+
   @moduledoc """
   a measuring tool for the Erlang VM
 
   Given an integer `n` (number of iterations) as input, returns the time in `ms` to run the algorithm with n.
   The calculated time increases non linearly with n, try with low number like 300.
-  I use it to compare vm on different hardwares and dimension loads.
   """
 
   def run(n) do
@@ -38,9 +38,16 @@ defmodule VmCpuBench do
   end
 end
 
-iters = IO.gets('') |> String.trim_trailing() |> String.to_integer()
+iters = IO.gets("") |> String.trim_trailing() |> String.to_integer()
 
 VmCpuBench.run(iters)
 |> IO.inspect(
-  label: "computing time (ms.) on OTP #{System.otp_release()} erts-#{:erlang.system_info(:version)} to execute #{iters} iterations "
+  label: "  Elixir version     #{System.version()}
+  Erlang/OTP version #{System.otp_release()}
+  ERTS version       #{:erlang.system_info(:version)}
+  Compiled for       #{:erlang.system_info(:system_architecture)}
+  Schedulers         #{:erlang.system_info(:schedulers)}
+  Schedulers online  #{:erlang.system_info(:schedulers_online)}
+  Computing time (ms.) to execute #{iters} iterations "
 )
+

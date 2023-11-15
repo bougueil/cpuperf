@@ -1,11 +1,10 @@
 # Cpuperf
 
-## a measuring tool for the Erlang VM
+## a CPU Benchmark tool for the Erlang VM
 
-  Given an integer n (number of iterations) as input, returns the time in `ms` to run the algorithm with n.
-  The calculated time increases non linearly with n, try with low number like 300.
+  A simple tool to display the time to do a multi-core computation.
 
-I use it to compare vm on different hardwares and dimension loads.
+  The tool has one parameter `NUM_ITERS`that augments the computation if higher.
 
 ## Usage
 ```
