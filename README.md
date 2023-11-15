@@ -2,16 +2,16 @@
 
 ## a CPU Benchmark tool for the Erlang VM
 
-  A simple tool to display the time to do a multi-core computation.
+A simple tool to display the time to do a multi-core computation.
 
-  The tool has one parameter `NUM_ITERS`that augments the computation if higher.
+The tool has one parameter: `NUM_ITERS`that augments the computation if higher.
 
 ## Usage
 ```
-  git clone https://github.com/bougueil/cpuperf.git
-  cd cpuperf/
-  NUM_ITERS=600
-  ./show_vm_cpu_perf $NUM_ITERS
+git clone https://github.com/bougueil/cpuperf.git
+cd cpuperf/
+NUM_ITERS=600
+./show_vm_cpu_perf $NUM_ITERS
 
 CPU model:  12th Gen Intel(R) Core(TM) i5-1235U
 1 CPU,  10 physical cores per CPU, total 12 logical CPU units
@@ -26,7 +26,7 @@ CPU model:  12th Gen Intel(R) Core(TM) i5-1235U
 
 ## setting the number of schedulers online
 ```
-  ./show_vm_cpu_perf $NUM_ITERS 1   # 1 scheduler online
+./show_vm_cpu_perf $NUM_ITERS 1   # 1 scheduler online
 
 CPU model:  12th Gen Intel(R) Core(TM) i5-1235U
 1 CPU,  10 physical cores per CPU, total 12 logical CPU units

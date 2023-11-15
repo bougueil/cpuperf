@@ -1,5 +1,4 @@
 defmodule VmCpuBench do
-
   @moduledoc """
   a measuring tool for the Erlang VM
 
@@ -41,13 +40,11 @@ end
 iters = IO.gets("") |> String.trim_trailing() |> String.to_integer()
 
 VmCpuBench.run(iters)
-|> IO.inspect(
-  label: "  Elixir version     #{System.version()}
+|> IO.inspect(label: "System and architecture:
+  Elixir version     #{System.version()}
   Erlang/OTP version #{System.otp_release()}
   ERTS version       #{:erlang.system_info(:version)}
   Compiled for       #{:erlang.system_info(:system_architecture)}
   Schedulers         #{:erlang.system_info(:schedulers)}
   Schedulers online  #{:erlang.system_info(:schedulers_online)}
-  Computing time (ms.) to execute #{iters} iterations "
-)
-
+  Computing time (ms.) to execute #{iters} iterations ")

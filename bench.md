@@ -5,6 +5,7 @@
 ```
 CPU model:  AMD EPYC 7281 16-Core Processor
 1 CPU,  1 physical cores per CPU, total 1 logical CPU units
+System and architecture:
   Elixir version     1.15.7
   Erlang/OTP version 26
   ERTS version       14.1
@@ -18,6 +19,7 @@ CPU model:  AMD EPYC 7281 16-Core Processor
 ```
 CPU model:  12th Gen Intel(R) Core(TM) i5-1235U
 1 CPU,  10 physical cores per CPU, total 12 logical CPU units
+System and architecture:
   Elixir version     1.17.0-dev
   Erlang/OTP version 26
   ERTS version       14.1.1
