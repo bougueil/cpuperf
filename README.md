@@ -4,7 +4,7 @@
 
 A simple tool to display the time to do a multi-core computation.
 
-The tool has one parameter: `NUM_ITERS`that augments the computation if higher.
+The tool has one parameter: `NUM_ITERS`that increase the computation workload if higher.
 
 ## Usage
 ```
