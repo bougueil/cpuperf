@@ -2,13 +2,13 @@ defmodule VmCpuBench do
   @moduledoc """
   a measuring tool for the Erlang VM
 
-  Given an integer `n` (number of iterations) as input, returns the time in `ms` to run the algorithm with n.
-  The calculated time increases non linearly with n, try with low number like 300.
+  Given an integer `num_iterations` (number of iterations) as input, returns the time in `ms` to run the algorithm with num_iterations.
+  The calculated time increases non linearly with num_iterations, try with low number like 300.
   """
 
-  def run(n) do
+  def run(num_iterations) do
     :rand.seed(:exsss, 0)
-    numbers = for _ <- n..1, do: :rand.uniform(1000)
+    numbers = Enum.map(1..num_iterations, fn _ -> :rand.uniform(1000) end)
     self = self()
 
     recurse_fn = fn
@@ -25,7 +25,7 @@ defmodule VmCpuBench do
 
     bench_fn = fn ->
       for _ <- numbers, do: spawn(worker_fn)
-      recurse_fn.(recurse_fn, n, [])
+      recurse_fn.(recurse_fn, num_iterations, [])
     end
 
     (fn ->
